@@ -25,4 +25,3 @@ protected:
 TEST_F(SimdexpTest, a_plus_b) {
   verify();
 }
-

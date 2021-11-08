@@ -18,5 +18,6 @@ include_directories(${ADDITION_HEADERS_DIR})
 
 add_subdirectory(src)
 add_subdirectory(test)
+add_subdirectory(bench)
 
 
