@@ -11,10 +11,10 @@ set(SIMDEXP_INSTALL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(SIMDEXP_INSTALL_BIN_DIR ${PROJECT_SOURCE_DIR}/bin)
 set(SIMDEXP_INSTALL_LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
 
-set(ADDITION_HEADERS_DIR ${PROJECT_SOURCE_DIR}/src/addition)
+set(EXPERIMENTS_HEADERS_DIR ${PROJECT_SOURCE_DIR}/src/experiments)
 
 include_directories(${SIMDEXP_INSTALL_INCLUDE_DIR})
-include_directories(${ADDITION_HEADERS_DIR})
+include_directories(${EXPERIMENTS_HEADERS_DIR})
 
 add_subdirectory(src)
 add_subdirectory(test)
