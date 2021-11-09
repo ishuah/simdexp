@@ -6,8 +6,8 @@ add_subdirectory(lib/google/benchmark)
 include_directories(${ADDITION_HEADERS_DIR})
 include_directories(lib/google/benchmark/include)
 
-set(SOURCE_FILES main.cpp src/addition_benchmarks.cpp)
+set(SOURCE_FILES main.cpp src/all_benchmarks.cpp)
 
-add_executable(addition_benchmarks ${SOURCE_FILES})
-target_link_libraries(addition_benchmarks addition benchmark)
-install(TARGETS addition_benchmarks DESTINATION bin)
+add_executable(all_benchmarks ${SOURCE_FILES})
+target_link_libraries(all_benchmarks addition benchmark)
+install(TARGETS all_benchmarks DESTINATION bin)

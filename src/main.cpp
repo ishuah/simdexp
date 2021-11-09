@@ -14,10 +14,14 @@ int main(int argc, const char *argv[]) {
   float d[8] = {};
   
   add_float32_simd(a, b, c);
-  cout << c[0] << "\t" << c[7] << "\n";
+  for (float i: c)
+    cout << i << '\t';
+  cout << '\n';
   
   add_float32(a, b, d);
-  cout << d[0] << "\t" << d[7] << "\n";
+  for (float i: d)
+    cout << i << '\t';
+  cout << '\n';
 
   return 0;
 }
