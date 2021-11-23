@@ -12,9 +12,18 @@ int main(int argc, const char *argv[]) {
   float b[8] = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8};
   float c[8] = {};
   float d[8] = {};
+
+  float e[4] = {0.1, 0.2, 0.3, 0.4};
+  float f[4] = {0.5, 0.6, 0.7, 0.8};
+  float g[4] = {};
   
-  add_float32_simd(a, b, c);
+  add_float32_avx2(a, b, c);
   for (float i: c)
+    cout << i << '\t';
+  cout << '\n';
+
+  add_float32_SIMD(e, f, g);
+  for (float i: g)
     cout << i << '\t';
   cout << '\n';
   
