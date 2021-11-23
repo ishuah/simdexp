@@ -1,4 +1,5 @@
 #include <addition.h>
+#include <multiplication.h>
 #include <iostream>
 
 using namespace std;
@@ -28,6 +29,21 @@ int main(int argc, const char *argv[]) {
   cout << '\n';
   
   add_float32(a, b, d);
+  for (float i: d)
+    cout << i << '\t';
+  cout << '\n';
+
+  mul_float32_avx2(a, b, c);
+  for (float i: c)
+    cout << i << '\t';
+  cout << '\n';
+
+  mul_float32_SIMD(e, f, g);
+  for (float i: g)
+    cout << i << '\t';
+  cout << '\n';
+  
+  mul_float32(a, b, d);
   for (float i: d)
     cout << i << '\t';
   cout << '\n';
