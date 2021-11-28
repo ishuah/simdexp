@@ -1,7 +1,10 @@
 #ifndef CMAKE_DOTPRODUCT_H
 #define CMAKE_DOTPRODUCT_H
 
+#include <immintrin.h>
+
 using namespace std;
 
-void dot_product(float a[8][8], float b[8][8] , float c[8][8]);
+float dot_product_avx2(float *a, float *b, size_t size);
+float dot_product(float *a, float *b, size_t size);
 #endif
