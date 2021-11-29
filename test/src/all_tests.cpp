@@ -73,6 +73,15 @@ protected:
     EXPECT_FLOAT_EQ(c, 27.6);
   }
 
+  virtual void verify_dot_product_avx2_two_accumulators() {
+    float a[16] = {0.1, 0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.1,0.9,1.7,2.5,3.3,4.1,4.9,5.7};
+    float b[16] = {0.1,0.9,1.7,2.5,3.3,4.1,4.9,5.7,0.1, 0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+    float c;
+    size_t size = 16;
+
+    c = dot_product_avx2_two_accumulators(a, b, size);
+  }
+
   virtual void verify_dot_product() {
     float a[16] = {0.1, 0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.1,0.9,1.7,2.5,3.3,4.1,4.9,5.7};
     float b[16] = {0.1,0.9,1.7,2.5,3.3,4.1,4.9,5.7,0.1, 0.2,0.3,0.4,0.5,0.6,0.7,0.8};
@@ -114,4 +123,8 @@ TEST_F(SimdexpTest, dot_product_avx2) {
 
 TEST_F(SimdexpTest, dot_product) {
   verify_dot_product();
+}
+
+TEST_F(SimdexpTest, dot_product_avx2_multiple_accumulators) {
+  verify_dot_product_avx2_two_accumulators();
 }
