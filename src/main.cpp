@@ -57,7 +57,7 @@ int main(int argc, const char *argv[]) {
 
   float h = dot_product(aa, bb, size);
   float h2 = dot_product_avx2(aa, bb, size);
-  float h3 = dot_product_avx2_two_accumulators(aa, bb, size);
+  float h3 = dot_product_avx2_multiple_accumulators(aa, bb, size, 2);
   cout << "\n\ndot product naive: " << h;
   cout << "\ndot product avx2 fma:\t" << h2;
   cout << "\ndot product avx2 fma multiple accumulators:\t" << h3 << "\n";
